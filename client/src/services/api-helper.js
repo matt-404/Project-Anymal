@@ -45,7 +45,7 @@ export const putUser = async (user_id, userData) => {
   return response.data;
 }
 
-// ============== Categorys ================
+// ============== Categories ================
 export const getAllCategories = async () => {
   const response = await api.get('/categories');
   return response.data;

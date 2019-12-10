@@ -5,16 +5,17 @@ function Header(props) {
   return (
     <header>
       <h1><Link to='/'>Anymal</Link></h1>
+      <h2><Link to='/categories'>Categories</Link></h2>
       <div>
         {props.currentUser
-        ?
-        <>
-          <p>{props.currentUser.username}</p>
-          <button onClick={props.handleLogout}>logout</button>
-        </>
-        :
-        <button onClick={props.handleLoginButton}>Login/register</button>
-       }
+          ?
+          <>
+            <p>{props.currentUser.username}</p>
+            <button onClick={props.handleLogout}>logout</button>
+          </>
+          :
+          <button onClick={props.handleLoginButton}>Login/register</button>
+        }
       </div>
     </header>
   );

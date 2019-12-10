@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   def show
     @category = Category.find(params[:id])
-    render json: @category, include: :user
+    render json: @category, include: [:user, :posts]
   end
 
   # POST /categories

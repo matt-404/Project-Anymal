@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 import { Route, withRouter } from 'react-router-dom';
-import { loginUser, registerUser, verifyUser } from './services/api-helper';
+import { loginUser, registerUser, verifyUser, getAllCategories } from './services/api-helper';
 import Header from './components/Header';
 import Register from './components/Register';
 import Login from './components/Login';
+import Categories from './components/Categories';
+import SingleCategory from './components/SingleCategory';
 
 
 class App extends React.Component {
@@ -15,7 +17,8 @@ class App extends React.Component {
         username: '',
         password: ''
       },
-      currentUser: null
+      currentUser: null,
+      categories: []
     }
   }
 
@@ -24,6 +27,7 @@ class App extends React.Component {
     if (currentUser) {
       this.setState({ currentUser })
     }
+    this.fetchCategories()
   }
 
   handleLoginButton = () => {
@@ -58,6 +62,13 @@ class App extends React.Component {
     }))
   }
 
+  fetchCategories = async () => {
+    const categories = await getAllCategories();
+    this.setState({
+      categories
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -80,6 +91,17 @@ class App extends React.Component {
             handleChange={this.authHandleChange}
           />
         )} />
+        <Route exact path="/categories" render={() => (
+          <Categories
+            categories={this.state.categories}
+          />
+        )} />
+        <Route exact path="/categories/:id" render={(props) => {
+          const catId = props.match.params.id;
+          return <SingleCategory
+            catId={catId}
+          />
+        }} />
       </div>
     );
   }
