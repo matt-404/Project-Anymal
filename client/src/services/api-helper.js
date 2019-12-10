@@ -82,9 +82,7 @@ export const getAllPosts = async (category_id) => {
   return response.data
 }
 
-export const postPost = async (category_id, user_id, postData) => {
-  postData.user_id = user_id
-  postData.category_id = category_id
+export const postPost = async (category_id, postData) => {
   const response = await api.post(`/categories/${category_id}/posts`, { post: postData });
   return response.data
 }

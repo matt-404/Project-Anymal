@@ -1,13 +1,47 @@
 body {
   text-align: center;
+  margin: 0 auto;
 }
+/* ========================== Header ================= */
 header {
+  /* font-size: 1em;
+  height: 100px;
+  border-bottom: 2px solid black;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  top: 0;
   width: 100%;
-  /* padding: 0 10%; */
+  background-color: grey; */
+  border-bottom: 2px solid black;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  background: linear-gradient(to right, rgb(223, 197, 176), rgb(150, 211, 196));
 }
 
-img {
-  width: 50%
-  
+#anymal {
+  font-size: 2em;
+  text-align: center;
+  margin: auto;
+}
+
+header div {
+  /* margin-left: 15%;
+  width: 30%;
+  display: flex;
+  align-items: center; */
+}
+
+header button {
+  width: 100px;
+  height: 40px;
+}
+
+#login {
+  /* margin-left: 40px; */
+}
+.post-title {
+/* display: ; */
 }

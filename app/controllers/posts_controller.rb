@@ -16,10 +16,13 @@ class PostsController < ApplicationController
 
   # POST /posts
   def create
+    @category = Category.find(params[:category_id])
     @post = Post.new(post_params)
+    @post.user = @current_user
+    @post.category = @category
 
     if @post.save
-      render json: @post, status: :created, location: @post
+      render json: @post, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end

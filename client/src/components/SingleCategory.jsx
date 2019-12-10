@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getOneCategory } from '../services/api-helper';
+import { getOneCategory, deletePost } from '../services/api-helper';
 
 class SingleCategory extends Component {
   constructor() {
@@ -16,6 +16,18 @@ class SingleCategory extends Component {
     })
   }
 
+  handleDelete = async (post_id) => {
+    await deletePost(post_id);
+    this.setState(prevState => ({
+      category: {
+        ...prevState.category,
+        posts: prevState.category.posts.filter(post => {
+          return post.id !== post_id
+        })
+      }
+    }))
+  }
+
   render() {
     const { category } = this.state;
     return (
@@ -26,8 +38,10 @@ class SingleCategory extends Component {
             <h3>{category.title}</h3>
             {category.posts.map(post => (
               <>
-                <p>{post.title}</p>
+                <p id="post-title">{post.title}</p>
                 <img src={post.image_url} alt={post.title} />
+                <button onClick={() => this.props.setPostEdit(this.props.catId, post)} >Edit</button>
+                <button onClick={() => this.handleDelete(post.id)}>Delete</button>
               </>
             ))}
           </>
