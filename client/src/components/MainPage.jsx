@@ -7,7 +7,6 @@ export default class MainPage extends React.Component {
       <div className="main-page">
         <button><Link to='/categories'>Categories</Link></button>
         <button><Link to='/createpost'>Create a post</Link></button>
-
       </div>
     )
   };

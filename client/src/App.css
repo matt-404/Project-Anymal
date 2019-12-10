@@ -21,17 +21,17 @@ header {
   background: linear-gradient(to right, rgb(223, 197, 176), rgb(150, 211, 196));
 }
 
-#anymal {
+.header h1 {
   font-size: 2em;
   text-align: center;
   margin: auto;
 }
 
 header div {
-  /* margin-left: 15%;
+  margin-left: 15%;
   width: 30%;
   display: flex;
-  align-items: center; */
+  align-items: center;
 }
 
 header button {
@@ -39,9 +39,26 @@ header button {
   height: 40px;
 }
 
+img {
+  width: 50%;
+}
+
+#logo {
+  width: 100px;
+  transition: transform 2s ease-in-out;
+}
+
+#logo:hover {
+  transform: rotate(1080deg) scale(1.6);
+}
+
 #login {
   /* margin-left: 40px; */
 }
 .post-title {
 /* display: ; */
+}
+
+.main-page button{
+ 
 }

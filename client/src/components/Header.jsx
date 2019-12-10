@@ -5,8 +5,14 @@ function Header(props) {
   return (
 
     <header>
-      <Link id="anymal" to='/'>Anymal</Link>
-      
+      <div className="header">
+        <p>Not GitHub<br></br>cat btw ^_^</p>
+        <Link to="/">
+          <img id="logo" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="logo"></img>
+        </Link>
+        <p>Home</p>
+      </div>
+      <h1>Anymal</h1>
       <div id="login">
         {props.currentUser
           ?
