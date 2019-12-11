@@ -1,19 +1,48 @@
+*:focus {
+  outline: none;
+}
+
 body {
+  font-family: 'Noto Sans JP', sans-serif;
   text-align: center;
   margin: 0 auto;
+  background-color: rgb(235, 209, 209);
 }
+
+/* ========================== Styles ================= */
+
+.bold {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.greenText {
+  color: green;
+}
+
+.redText {
+  color: red;
+}
+
+.blueText {
+  color: blue;
+}
+
+.brownText {
+  color: brown;
+}
+
+::selection {
+  background:#d17b9c;
+  color:rgb(183, 221, 252);
+  }
+
 /* ========================== Header ================= */
 header {
-  /* font-size: 1em;
-  height: 100px;
-  border-bottom: 2px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  top: 0;
-  width: 100%;
-  background-color: grey; */
+  font-family: 'Nanum Myeongjo', serif;;
   border-bottom: 2px solid black;
   height: 200px;
   width: 100%;
@@ -21,10 +50,23 @@ header {
   background: linear-gradient(to right, rgb(223, 197, 176), rgb(150, 211, 196));
 }
 
-.header h1 {
-  font-size: 2em;
+h1 {
+  font-size: 3em;
   text-align: center;
+  align-items: center;
   margin: auto;
+  text-shadow: 0 1px 0 rgb(202, 192, 192),
+               0 2px 0 #aa9e9e,
+               0 3px 0 rgb(160, 142, 142),
+               0 4px 0 #b49a9a,
+               0 5px 0 rgb(190, 169, 169),
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
 }
 
 header div {
@@ -39,26 +81,62 @@ header button {
   height: 40px;
 }
 
-img {
-  width: 50%;
-}
-
 #logo {
   width: 100px;
   transition: transform 2s ease-in-out;
 }
 
 #logo:hover {
-  transform: rotate(1080deg) scale(1.6);
+  transform: rotate(1080deg) scale(1.5);
 }
 
-#login {
-  /* margin-left: 40px; */
+#home {
+  font-size: 20px;
+  margin-left: 20px;
 }
+
+#login button{
+  margin-left: 20px;
+}
+
+/* ========================== Main ================= */
+
 .post-title {
-/* display: ; */
+  /* display: ; */
 }
 
 .main-page button{
- 
+  border: 2px solid green;
+  width: 100px;
+  height: 50px;
+  margin: 20px;
+}
+
+img {
+  width: 50%;
+}
+
+input {
+  width: 200px;
+  height: 25px;
+  border-radius: 15px;
+  color: blue;
+  text-align: center;
+}
+
+.auth-container button{
+  background-color: rgb(217, 217, 243);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.main-page button{
+  border: 2px solid aquamarine ;
+}
+
+.category button {
+  /* display: inline-block; */
 }

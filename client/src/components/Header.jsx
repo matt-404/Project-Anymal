@@ -10,14 +10,15 @@ function Header(props) {
         <Link to="/">
           <img id="logo" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="logo"></img>
         </Link>
-        <p>Home</p>
+        <p id="home"><span className="greenText bold">H</span><span className="blueText bold">O</span>
+        <span className="brownText bold">M</span><span className="redText bold">E</span></p>
       </div>
       <h1>Anymal</h1>
       <div id="login">
         {props.currentUser
           ?
           <>
-            <p>{props.currentUser.username}</p>
+            <p>Hello, {props.currentUser.username}</p>
             <button onClick={props.handleLogout}>Logout</button>
           </>
           :

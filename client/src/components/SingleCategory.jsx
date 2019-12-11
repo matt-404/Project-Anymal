@@ -31,7 +31,7 @@ class SingleCategory extends Component {
   render() {
     const { category } = this.state;
     return (
-      <div>
+      <div id="category">
         {
           category &&
           <>
